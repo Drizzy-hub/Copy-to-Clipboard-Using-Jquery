@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Copy to Clipboard</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />       <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container">
+      <div class="header"><b>Copy to Clipboard</b></header></div>
+        <div class="content"><textarea class="text-to-copy">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta facilis expedita ut pariatur quo fuga quasi illum provident maxime, hic quibusdam ullam dolorum architecto laudantium qui sint aspernatur velit excepturi?</textarea>
+        </div>
+        <div class="footer"><button class="copy">COPY<i class="fa fa-clone"></i></button></div>
+        <div class="display"><span class="copiedtext">Text Copied !</span></div>
+    </div>
+
+    
+</body>
+    <script>
+        $(document).ready(function(){
+            $(".copy").click(function(){
+                $(".text-to-copy").select();
+                document.execCommand("copy"); 
+                $(".copiedtext").show()
+                setTimeout(function() { $(".copiedtext").hide(); },5000); 
+            })
+
+        })
+
+        
+    </script>
+</html>
